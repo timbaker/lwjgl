@@ -334,6 +334,11 @@ public class XRandR {
 		return new DisplayMode(primary.width, primary.height, 24, primary.freq);
 	}
 
+	static String getPrimaryScreenIdentifier() {
+		populate();
+		return primaryScreenIdentifier;
+	}
+
 	private static Screen findPrimary(Screen... screens) {
 		for ( Screen screen : screens ) {
 			if ( screen.name.equals(primaryScreenIdentifier) ) {
